@@ -11,7 +11,6 @@ You want to :
 ```console
 udevadm info /dev/ttyUSBx
 ```
-
 for elaborate info/to get latency timer value and hierarchy: udevadm info -a -n /dev/ttyUSBx
 
 
@@ -23,10 +22,11 @@ ACTION=="add", SUBSYSTEM=="tty",ENV{ID_USB_INTERFACE_NUM}=="01", ENV{ID_SERIAL_S
 ```
 For raspberry PI remove the ACTION=="add"
 
+
 3- trigger new rules:
-
+```console
 sudo udevadm trigger
-
+```
 
 
 
