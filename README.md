@@ -28,9 +28,17 @@ For raspberry PI remove the ACTION=="add"
 sudo udevadm trigger
 ```
 
+## Updating scipy on a raspberry Pi
+When need atleast 1GB of swap to build
+1- format a usb drive and name it SWAP(or anything really)
+2- Plug it to the Raspberry
+3- Change the contents of /etc/dphys-swapfile  to
+```bash
 
-
-
+CONF_SWAPFILE=/media/pi/SWAP
+CONF_SWAPSIZE=1000
+```
+4. /etc/init.d/dphys-swapfile restart
 
 
 
