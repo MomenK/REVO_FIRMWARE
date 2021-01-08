@@ -16,10 +16,11 @@ for elaborate info/to get latency timer value and hierarchy: udevadm info -a -n 
 
 2 -create a file 99-revo-usb.rules in /etc/udev/rules.d with the following rules
 ```bash
-ACTION=="add", SUBSYSTEM=="tty",ENV{ID_USB_INTERFACE_NUM}=="00", ENV{ID_SERIAL_SHORT}=="FT5CZ079", SYMLINK+="COM3", MODE="0666", ATTR{device/latency_timer}="1"
-
-ACTION=="add", SUBSYSTEM=="tty",ENV{ID_USB_INTERFACE_NUM}=="01", ENV{ID_SERIAL_SHORT}=="FT5CZ079", SYMLINK+="COM4", MODE="0666", ATTR{device/latency_timer}="1"
+ACTION=="add", SUBSYSTEM=="tty",ENV{ID_USB_INTERFACE_NUM}=="00", ENV{ID_SERIAL_SHORT}=="REVO", SYMLINK+="COM3", MODE="0666", ATTR{device/latency_timer}="1"
+ACTION=="add", SUBSYSTEM=="tty",ENV{ID_USB_INTERFACE_NUM}=="01", ENV{ID_SERIAL_SHORT}=="REVO", SYMLINK+="COM4", MODE="0666", ATTR{device/latency_timer}="1"
 ```
+
+
 For raspberry PI remove the ACTION=="add"
 
 
